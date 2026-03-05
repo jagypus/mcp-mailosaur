@@ -1,8 +1,6 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import MailosaurClient from "mailosaur";
 import { createMailosaurClient } from "./client.js";
 import { registerMessageTools } from "./tools/messages.js";
-import { registerServerTools } from "./tools/servers.js";
 import { registerAnalysisTools } from "./tools/analysis.js";
 
 export function createServer(
@@ -17,7 +15,6 @@ export function createServer(
   const client = createMailosaurClient(apiKey);
 
   registerMessageTools(server, client, defaultServerId);
-  registerServerTools(server, client);
   registerAnalysisTools(server, client);
 
   return server;

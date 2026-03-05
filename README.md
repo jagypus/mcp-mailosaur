@@ -25,6 +25,7 @@ Add to your `.vscode/mcp.json`:
 {
   "servers": {
     "mailosaur": {
+      "type": "stdio",
       "command": "npx",
       "args": ["-y", "mcp-mailosaur"],
       "env": {
@@ -64,13 +65,6 @@ Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_
 | `list_messages` | List messages in a server with pagination and optional `receivedAfter` filter |
 | `get_message` | Get full message details by ID — HTML body, text body, headers, attachments |
 | `search_messages` | Search for messages by sender, recipient, subject, or body text. Waits for matches with configurable timeout. |
-
-### Servers
-
-| Tool | Description |
-|------|-------------|
-| `list_servers` | List all Mailosaur servers to find server IDs |
-| `get_server` | Get server details including name and message count |
 
 ### Analysis
 
