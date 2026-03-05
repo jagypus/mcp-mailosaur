@@ -1,0 +1,43 @@
+{
+  "name": "mcp-mailosaur",
+  "version": "0.1.0",
+  "description": "MCP server for Mailosaur email testing - debug e2e test issues with AI agents",
+  "type": "module",
+  "bin": {
+    "mcp-mailosaur": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && chmod +x dist/index.js",
+    "prepare": "npm run build",
+    "watch": "tsc --watch"
+  },
+  "keywords": [
+    "mcp",
+    "mailosaur",
+    "email-testing",
+    "e2e",
+    "playwright",
+    "model-context-protocol"
+  ],
+  "license": "MIT",
+  "author": "David Hodgson",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jagypus/mcp-mailosaur"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "mailosaur": "^11.0.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.8.0"
+  }
+}
