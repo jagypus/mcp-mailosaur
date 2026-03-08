@@ -5,8 +5,13 @@ MCP server for [Mailosaur](https://mailosaur.com) email testing. Debug Playwrigh
 ## Quick Start
 
 ```bash
-MAILOSAUR_API_KEY=your-key npx mcp-mailosaur
+git clone https://github.com/jagypus/mcp-mailosaur.git
+cd mcp-mailosaur
+npm install --ignore-scripts
+npm run build
 ```
+
+Then add it to your editor config below.
 
 ## Configuration
 
@@ -26,8 +31,8 @@ Add to your `.vscode/mcp.json`:
   "servers": {
     "mailosaur": {
       "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "mcp-mailosaur"],
+      "command": "node",
+      "args": ["/path/to/mcp-mailosaur/dist/index.js"],
       "env": {
         "MAILOSAUR_API_KEY": "your-api-key",
         "MAILOSAUR_SERVER_ID": "your-server-id"
@@ -45,8 +50,8 @@ Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_
 {
   "mcpServers": {
     "mailosaur": {
-      "command": "npx",
-      "args": ["-y", "mcp-mailosaur"],
+      "command": "node",
+      "args": ["/path/to/mcp-mailosaur/dist/index.js"],
       "env": {
         "MAILOSAUR_API_KEY": "your-api-key",
         "MAILOSAUR_SERVER_ID": "your-server-id"
@@ -87,21 +92,6 @@ Ask your AI agent to search for the email:
 **"I want to verify the email content is correct"**
 
 > Get the full details of the latest message in my Mailosaur inbox
-
-## Development
-
-```bash
-git clone https://github.com/jagypus/mcp-mailosaur.git
-cd mcp-mailosaur
-npm install --ignore-scripts
-npm run build
-```
-
-Test locally:
-
-```bash
-MAILOSAUR_API_KEY=your-key node dist/index.js
-```
 
 ## License
 
